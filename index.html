@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Delivery App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Доставка воды</h1>
+  <div id="app-content">
+    <h2>Выберите товары:</h2>
+    <div class="product-list" id="product-list">
+      <!-- Товары будут загружаться с сервера -->
+      <p>Загрузка товаров...</p>
+    </div>
+    <div id="cart" style="margin-top: 20px;">
+      <h3>Корзина</h3>
+      <ul id="cart-items"></ul>
+      <p>Итого: <span id="total-price">0 руб</span></p>
+    </div>
+    <h2>Оформление заказа:</h2>
+    <div class="order-form">
+      <label>Адрес доставки: <input type="text" id="delivery-address" placeholder="Введите адрес"></label>
+      <label>Время доставки: <input type="datetime-local" id="delivery-time"></label>
+      <label>Комментарий: <textarea id="comment" placeholder="Дополнительно..."></textarea></label>
+    </div>
+    <button id="checkout" style="display: none; margin-top: 20px;">Перейти к оплате</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
