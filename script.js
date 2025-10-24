@@ -22,7 +22,7 @@ function loadProducts() {
   mockProducts.forEach(product => {
     const button = document.createElement('button');
     button.className = 'product';
-    button.textContent = `${product.name} - ${product.price} руб`;
+    button.textContent = `${product.name} - ${product.price} грн`;
     button.addEventListener('click', () => {
       cart.push(product);
       updateCart();
@@ -37,11 +37,11 @@ function updateCart() {
   let total = 0;
   cart.forEach((item, index) => {
     const li = document.createElement('li');
-    li.innerHTML = `${item.name} - ${item.price} руб <button class="remove-btn" data-index="${index}">Удалить</button>`;
+    li.innerHTML = `${item.name} - ${item.price} грн <button class="remove-btn" data-index="${index}">Удалить</button>`;
     cartItems.appendChild(li);
     total += item.price;
   });
-  totalPrice.textContent = `${total} руб`;
+  totalPrice.textContent = `${total} грн`;
   checkoutButton.style.display = cart.length > 0 ? 'block' : 'none';
   document.querySelectorAll('.remove-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
